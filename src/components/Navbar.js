@@ -1,5 +1,6 @@
 import React from 'react'
 import {Navbar, Nav} from 'react-bootstrap'
+import { Link } from "react-router-dom"
 export default function Naavbar() {
     return (
      <div>  
@@ -7,9 +8,9 @@ export default function Naavbar() {
 
     <Navbar.Brand href="home">Movie App</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="home">Home</Nav.Link>
-      <Nav.Link href="features">Movies</Nav.Link>
-      <Nav.Link href="pricing">Others</Nav.Link>
+      <Link to="home">Home</Link>
+      <Link to="movies">Movies</Link>
+      <Link to="Search">Search</Link>
       
     </Nav>
     

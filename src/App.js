@@ -1,3 +1,5 @@
+
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Naavbar from './components/Navbar'
 import Filter from './components/Filter'
 import MoviesList from './components/MoviesList'
@@ -44,11 +46,24 @@ setMovieList(
 )
 }
 return (
+  
+  <Router>
+    
   <div className="App">
+    
     <Naavbar/>
-    <Filter setSearch={setSearch} />
-    <MoviesList movieList={movieList}  search={search} addHandler={addHandler} />
+      <Routes>
+         <Route path="Search" element={
+         <Filter setSearch={setSearch} />}/>
+
+         <Route path="Home" element={
+         <MoviesList movieList={movieList}  search={search} addHandler={addHandler} setSearch={setSearch} />}/>
+    </Routes>
+   
   </div>
+  </Router>
+ 
+  
 );
 }
 
