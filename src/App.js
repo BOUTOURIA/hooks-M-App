@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Naavbar from './components/Navbar'
 import Filter from './components/Filter'
 import MoviesList from './components/MoviesList'
+import Description from "./components/Description";
 import './App.css';
 import {useState} from 'react'
 
@@ -56,9 +57,10 @@ return (
          <Route path="Search" element={
          <Filter setSearch={setSearch} />}/>
 
-         <Route path="Home" element={
-         <MoviesList movieList={movieList}  search={search} addHandler={addHandler} setSearch={setSearch} />}/>
-    </Routes>
+         <Route path="/Home" element={
+        <MoviesList movieList={movieList}  search={search} addHandler={addHandler} setSearch={setSearch} />}/>
+            <Route path= {"/filmDescription/:id"}  element = { <Description   movieList={movieList} />}/>
+     </Routes>
    
   </div>
   </Router>
